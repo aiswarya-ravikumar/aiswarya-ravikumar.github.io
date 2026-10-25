@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aiswarya Ravikumar – Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --surface:#f3f6fa; --ink:#14202e; --muted:#5b6b7e; --line:#e1e7ef; --accent:#2a52d9; --accent-soft:#e8eefc;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#10161f; --surface:#171f2b; --ink:#e8edf4; --muted:#9aa8ba; --line:#263143; --accent:#7f9cff; --accent-soft:#1d2a4d; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{--bg:#10161f; --surface:#171f2b; --ink:#e8edf4; --muted:#9aa8ba; --line:#263143; --accent:#7f9cff; --accent-soft:#1d2a4d; color-scheme: dark;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:28px 0;font-size:15px;font-weight:600}
+nav .links{display:flex;gap:26px;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--muted);transition:color .2s}
+nav a:hover{color:var(--ink)}
+nav .brand{color:var(--ink);font-weight:800;letter-spacing:-.01em}
+
+.hero{padding:72px 0 64px}
+.hero h1{font-size:clamp(46px,9vw,104px);line-height:.98;letter-spacing:-.045em;font-weight:800;margin:0 0 28px}
+.hero h1 span{display:block;color:var(--accent)}
+.role{font-size:clamp(18px,2.4vw,24px);font-weight:500;color:var(--muted);max-width:640px;margin:0 0 36px;line-height:1.5}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--line);transition:background .2s,border-color .2s}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.primary:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn:not(.primary):hover{background:var(--surface)}
+
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts div{padding:26px 20px 26px 0}
+.facts div+div{padding-left:20px;border-left:1px solid var(--line)}
+.facts b{display:block;font-size:34px;letter-spacing:-.03em;line-height:1.1}
+.facts small{color:var(--muted);font-size:14px}
+
+section{padding:84px 0 0}
+h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.03em;line-height:1.1;margin:0 0 36px;font-weight:700}
+.grid2{display:grid;grid-template-columns:1fr 1.6fr;gap:48px}
+p{margin:0 0 16px;max-width:66ch}
+.muted{color:var(--muted)}
+
+.timeline{border-left:2px solid var(--line);margin-left:6px}
+.job{position:relative;padding:0 0 44px 32px}
+.job::before{content:"";position:absolute;left:-7px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.job h3{margin:0;font-size:21px;letter-spacing:-.02em}
+.job .meta{color:var(--muted);font-size:14.5px;margin:2px 0 14px}
+.job ul{margin:0;padding-left:18px;max-width:70ch}
+.job li{margin-bottom:8px}
+.job li::marker{color:var(--accent)}
+
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.project{background:var(--surface);border-radius:18px;padding:30px}
+.project h3{margin:0 0 8px;font-size:20px;letter-spacing:-.02em}
+.project p{font-size:15.5px;color:var(--muted);margin-bottom:18px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.tags li{font-size:13px;font-weight:600;padding:5px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.project .win{font-size:14px;font-weight:700;margin-bottom:6px;color:var(--ink)}
+
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+.skill{padding:20px 0;border-top:1px solid var(--line)}
+.skill h3{font-size:16px;margin:0 0 6px}
+.skill p{margin:0;color:var(--muted);font-size:15px}
+
+.awards{list-style:none;padding:0;margin:0}
+.awards li{display:flex;justify-content:space-between;gap:24px;padding:18px 0;border-top:1px solid var(--line)}
+.awards li:last-child{border-bottom:1px solid var(--line)}
+.awards span{color:var(--muted);font-size:14.5px;text-align:right}
+
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.edu div{border:1px solid var(--line);border-radius:18px;padding:26px}
+.edu h3{margin:0 0 6px;font-size:18px}
+.edu p{margin:0 0 6px;font-size:15px;color:var(--muted)}
+
+.contact{margin-top:96px;background:var(--surface);border-radius:28px;padding:56px 40px}
+.contact h2{margin-bottom:14px}
+footer{padding:36px 0 48px;color:var(--muted);font-size:14px}
+
+@media (max-width:820px){
+  .facts{grid-template-columns:1fr 1fr}
+  .facts div:nth-child(3){padding-left:0;border-left:0}
+  .facts div:nth-child(n+3){border-top:1px solid var(--line)}
+  .grid2,.projects,.skills,.edu{grid-template-columns:1fr}
+  .grid2{gap:8px}
+  nav .links{gap:16px;font-size:14px}
+  .awards li{flex-direction:column;gap:2px}.awards span{text-align:left}
+  .contact{padding:36px 24px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+.lens{display:inline-flex;gap:4px;padding:5px;border:1px solid var(--line);border-radius:999px;background:var(--surface);margin:0 0 40px;flex-wrap:wrap}
+.lens button{font:inherit;font-weight:600;font-size:14.5px;border:0;background:transparent;color:var(--muted);padding:10px 18px;border-radius:999px;cursor:pointer;transition:background .25s,color .25s}
+.lens button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.lens-label{font-size:14px;color:var(--muted);margin:0 0 10px;font-weight:600}
+.kicker{display:flex;gap:8px;flex-wrap:wrap;list-style:none;padding:0;margin:0 0 32px}
+.kicker li{font-size:14px;font-weight:600;padding:6px 14px;border-radius:999px;border:1px solid var(--line)}
+.hero h1{margin-bottom:20px}
+.swap{animation:swap .35s ease}
+@keyframes swap{from{opacity:.0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.project.feat{background:var(--accent-soft)}
+.skill.hot h3::after{content:"Core to this view";margin-left:10px;font-size:12px;font-weight:700;color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Primary"><a class="brand" href="#top">Aiswarya R.</a>
+    <div class="links"><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
+  <header class="hero" id="top">
+    <p class="lens-label">View my profile as</p>
+    <div class="lens" role="group" aria-label="Profile view">
+      <button data-k="dev">Cloud &amp; DevOps</button><button data-k="pm">Project delivery</button><button data-k="ba">Business analysis</button>
+    </div>
+    <h1>Aiswarya<span>Ravikumar</span></h1>
+    <p class="role swap" id="role"></p>
+    <ul class="kicker swap" id="kick"></ul>
+    <div class="cta"><a class="btn primary" href="mailto:aiswarya.ravikumar22@gmail.com">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/aiswarya-ravikumar22" target="_blank" rel="noopener">View LinkedIn</a></div>
+  </header>
+  <div class="facts" role="list">
+    <div role="listitem"><b>3+</b><small>years in cloud and DevOps</small></div>
+    <div role="listitem"><b>300+</b><small>applications covered by the Resiliency Scorecard</small></div>
+    <div role="listitem"><b>35+</b><small>applications supported as an SRE</small></div>
+    <div role="listitem"><b>2</b><small>hackathons won</small></div>
+  </div>
+  <section id="about"><div class="grid2"><h2>About</h2><div class="swap" id="about-t"></div></div></section>
+  <section id="experience"><h2>Experience</h2><div class="timeline swap" id="jobs"></div></section>
+  <section id="projects"><h2>Selected projects</h2><div class="projects swap" id="projs"></div></section>
+  <section id="skills"><h2>Skills</h2><div class="skills swap" id="skl"></div></section>
+  <section id="recognition"><h2>Recognition</h2><ul class="awards">
+    <li>Gold Medal, Lockton AI Hackathon<span>2026</span></li>
+    <li>Certificate of Excellence, Lockton<span>2026</span></li>
+    <li>Hackathon Winner and Best Presentation Award, H&amp;R Block<span>Resiliency Scorecard</span></li>
+    <li>Customer-Centric Award and Better Together Award, H&amp;R Block<span>Support and collaboration</span></li></ul></section>
+  <section id="education"><h2>Education and certifications</h2><div class="edu">
+    <div><h3>MBA, Artificial Intelligence</h3><p>In progress</p><h3 style="margin-top:18px">B.Tech, Electrical and Electronics Engineering</h3><p>Muthoot Institute of Technology and Science, Ernakulam. Graduated 2023.</p></div>
+    <div><h3>Microsoft certified</h3><p>Azure Administrator Associate (AZ-104)</p><p>Azure Fundamentals (AZ-900)</p><p style="margin-top:14px">Languages: English (proficient), Malayalam (native)</p></div></div></section>
+  <section class="contact" id="contact"><h2>Let’s talk</h2>
+    <p class="muted">I’m open to cloud, DevOps, project delivery and business analysis roles, and I’m open to relocating. Email is the quickest way to reach me.</p>
+    <div class="cta" style="margin-top:24px"><a class="btn primary" href="mailto:aiswarya.ravikumar22@gmail.com">aiswarya.ravikumar22@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/aiswarya-ravikumar22" target="_blank" rel="noopener">linkedin.com/in/aiswarya-ravikumar22</a></div></section>
+  <footer>© 2026 Aiswarya Ravikumar. Kochi, India.</footer>
+</div>
+<script>
+const L={
+dev:{role:"Cloud and DevOps engineer building reliable Azure infrastructure with Terraform and CI/CD, based in Kochi, India.",kick:["Terraform","Azure DevOps","Site reliability","Landing zones"],
+ about:["I design, automate and run enterprise Azure environments. My work centres on Infrastructure as Code with Terraform, CI/CD pipelines in Azure DevOps, and keeping production services observable and available.","I like turning manual processes into dependable automation, and explaining the result clearly to engineers and leadership."],
+ order:[0,3,1,2],hot:["iac","azure","devops","mon"]},
+pm:{role:"Technical delivery professional who takes cloud and automation projects from design to production and keeps every stakeholder informed.",kick:["Delivery planning","Stakeholder reporting","Agile","Change management"],
+ about:["I have delivered a multi-environment Azure landing zone end-to-end, supported 35+ applications across three service tiers, and coordinated work across infrastructure, operations and application teams.","I work well with ITSM change and incident processes, report clearly to leadership, and am completing an MBA in Artificial Intelligence to pair delivery with business strategy."],
+ order:[0,1,3,2],hot:["del","devops","mon"]},
+ba:{role:"Analyst-minded engineer who turns business needs into requirements, dashboards and automation that leadership can use.",kick:["Requirements","Process improvement","KPIs and dashboards","Stakeholder communication"],
+ about:["I start from the problem. The Resiliency Scorecard began as a need to see risk across 300+ applications, and became a scoring platform with metrics leadership could act on. The invoice hub began as a manual process and became an AI-assisted solution.","I present clearly to technical and non-technical audiences, and my MBA in Artificial Intelligence is deepening how I connect data to decisions."],
+ order:[1,2,3,0],hot:["del","data"]}};
+const J=[
+{h:"Cloud Engineer, Lockton (via H&amp;R Block)",m:"Trivandrum, India · Aug 2025 – Present",b:{
+ dev:["Designed the IaC architecture and deployment standards for the Malaysia Azure landing zone and delivered it end-to-end across dev, test and production.","Defined the Terraform module structure and workspace strategy, and built reusable modules managed through GitHub.","Automated escalation of unacknowledged SCOM alerts to PagerDuty with a custom polling script.","Handled incidents, changes and requests in ServiceNow and Azure DevOps; administered Azure Databricks and Unity Catalog."],
+ pm:["Delivered the Malaysia Azure landing zone end-to-end across dev, test and production, following the standards and module structure I defined.","Selected for the Lockton client engagement for performance, technical expertise and reliability, working across VMware, Wintel and Cloud teams.","Managed incidents, changes and service requests in ServiceNow and Azure DevOps with minimal service disruption.","Automated monthly compliance reporting with PowerShell and won 1st place at the Lockton AI Hackathon 2026."],
+ ba:["Turned leadership reporting needs into a Power BI dashboard that consolidates operations data for VMware, Wintel and Cloud teams.","Automated monthly operational and compliance reporting with PowerShell, replacing manual effort.","Closed an incident-response gap by automating SCOM-to-PagerDuty escalation of unacknowledged alerts.","Won 1st place at the Lockton AI Hackathon 2026 with an AI-powered invoice solution built on Copilot, Dataverse and Power BI."]}},
+{h:"Associate Software Engineer, H&amp;R Block",m:"Trivandrum, India · Jul 2023 – Aug 2025",b:{
+ dev:["Implemented DevOps automation for four applications using Terraform Enterprise modules and Azure DevOps pipelines.","Moved applications from workspace-based workflows to CI/CD pipelines and migrated Azure IaC modules from RM3 to RM4.","Configured Datadog monitoring and alerting to improve observability and incident response.","Supported 35+ Tier-1 to Tier-3 applications as a Site Reliability Engineer."],
+ pm:["Supported 35+ Tier-1 to Tier-3 applications, coordinating with application owners and operations teams to keep services available.","Contributed to an infrastructure modernisation initiative: an RM3 to RM4 module migration and a move to CI/CD pipelines.","Standardised releases for four applications with Azure DevOps pipelines.","Received the Customer-Centric and Better Together awards for support and cross-team collaboration."],
+ ba:["Designed the Resiliency Scorecard to track resilience metrics across 300+ applications and give leadership visibility into risk.","Presented its architecture, impact and implementation to leadership and technical teams, winning Best Presentation.","Worked with owners of 35+ applications to understand and resolve service issues.","Received the Customer-Centric and Better Together awards for support and cross-team collaboration."]}}];
+const P=[
+{t:"Malaysia Azure landing zone",w:"",tags:["Terraform","Azure","GitHub"],d:{dev:"A multi-environment Azure foundation provisioned with Terraform, with the module structure, workspace strategy and deployment standards the team followed for the build-out.",pm:"Delivered across dev, test and production with defined standards, giving the wider team a repeatable way to build.",ba:"Translated infrastructure needs into a standard design and deployment approach that teams could reuse."}},
+{t:"Resiliency Scorecard platform",w:"Hackathon winner and Best Presentation Award",tags:["PowerShell","MVC","JavaScript"],d:{dev:"Analyses cloud resources across 300+ enterprise applications and scores their resiliency.",pm:"Gave leadership one view of resiliency across 300+ applications so fixes could be prioritised.",ba:"Defined and automated resilience metrics for 300+ applications, then presented the results to leadership."}},
+{t:"Centralized Invoice Hub Accelerator",w:"Gold Medal, Lockton AI Hackathon 2026",tags:["Copilot","Dataverse","Power BI"],d:{dev:"An AI-powered invoice automation solution built on Microsoft Copilot and Dataverse.",pm:"Designed and pitched an AI-assisted invoice solution that won first place against other teams.",ba:"Redesigned a manual invoice process into an AI-assisted workflow with a Power BI view of the pipeline."}},
+{t:"SCOM to PagerDuty escalation",w:"",tags:["PowerShell","PagerDuty","SCOM"],d:{dev:"A polling script that escalates unacknowledged alerts after resolving authentication and scheduling issues.",pm:"Closed a gap in incident response so critical alerts are never left unattended.",ba:"Mapped the escalation gap and automated it, improving incident response."}}];
+const S=[["iac","Infrastructure as Code","Terraform (Enterprise and Cloud), reusable modules, workspace strategy, Git, GitHub"],
+["azure","Azure","Virtual Machines, Virtual Networks, Application Gateway, Storage, NSG, App Services, ASE, Key Vault, Managed Identity, Databricks"],
+["devops","DevOps and automation","Azure DevOps, CI/CD pipelines, release automation, PowerShell, ServiceNow"],
+["mon","Monitoring and reliability","Datadog, Azure Monitor, SCOM, PagerDuty, disaster recovery, business continuity"],
+["data","Reporting and AI","Power BI, Microsoft Copilot, Dataverse"],
+["del","Delivery and analysis","Requirements gathering, process improvement, stakeholder reporting, KPI definition, ITSM change and incident management, Agile ways of working"],
+["oth","Also familiar with","Docker and Kubernetes (basic), NGINX Plus (basic), cost optimisation, cloud security best practices"]];
+const $=id=>document.getElementById(id);
+function show(k){
+ if(!L[k])k="dev";const l=L[k];
+ document.querySelectorAll(".lens button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===k));
+ $("role").textContent=l.role;$("kick").innerHTML=l.kick.map(x=>"<li>"+x+"</li>").join("");
+ $("about-t").innerHTML=l.about.map(x=>"<p>"+x+"</p>").join("");
+ $("jobs").innerHTML=J.map(j=>'<div class="job"><h3>'+j.h+'</h3><div class="meta">'+j.m+'</div><ul>'+j.b[k].map(x=>"<li>"+x+"</li>").join("")+"</ul></div>").join("");
+ $("projs").innerHTML=l.order.map((i,n)=>{const p=P[i];return '<article class="project'+(n<2?" feat":"")+'">'+(p.w?'<p class="win">'+p.w+"</p>":"")+"<h3>"+p.t+"</h3><p>"+p.d[k]+'</p><ul class="tags">'+p.tags.map(x=>"<li>"+x+"</li>").join("")+"</ul></article>"}).join("");
+ const o=[...S].sort((a,b)=>l.hot.includes(b[0])-l.hot.includes(a[0]));
+ $("skl").innerHTML=o.map(s=>'<div class="skill'+(l.hot.includes(s[0])?" hot":"")+'"><h3>'+s[1]+"</h3><p>"+s[2]+"</p></div>").join("");
+ ["role","kick","about-t","jobs","projs","skl"].forEach(id=>{const e=$(id);e.classList.remove("swap");void e.offsetWidth;e.classList.add("swap")});
+}
+document.querySelectorAll(".lens button").forEach(b=>b.addEventListener("click",()=>show(b.dataset.k)));
+const fromHash=()=>{const h=(location.hash||"").slice(1);return L[h]?h:null};
+window.addEventListener("hashchange",()=>{const h=fromHash();if(h)show(h)});
+show(fromHash()||"dev");
+</script>
+</body>
+</html>
