@@ -124,8 +124,9 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:14px}
   <header class="hero" id="top">
     <p class="lens-label">View my profile as</p>
     <div class="lens" role="group" aria-label="Profile view">
-      <button data-k="dev">Cloud &amp; DevOps</button><button data-k="pm">Project delivery</button><button data-k="ba">Business analysis</button>
+      <button data-k="dev">Cloud &amp; DevOps</button><button data-k="mgmt">Project &amp; business analysis</button>
     </div>
+    <button class="btn" id="more" style="display:none;margin:0 0 28px;padding:8px 16px;font-size:14px;cursor:pointer;background:transparent;color:var(--muted)">See other views of my profile</button>
     <h1>Aiswarya<span>Ravikumar</span></h1>
     <p class="role swap" id="role"></p>
     <ul class="kicker swap" id="kick"></ul>
@@ -151,7 +152,7 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:14px}
     <div><h3>MBA, Artificial Intelligence</h3><p>In progress</p><h3 style="margin-top:18px">B.Tech, Electrical and Electronics Engineering</h3><p>Muthoot Institute of Technology and Science, Ernakulam. Graduated 2023.</p></div>
     <div><h3>Microsoft certified</h3><p>Azure Administrator Associate (AZ-104)</p><p>Azure Fundamentals (AZ-900)</p><p style="margin-top:14px">Languages: English (proficient), Malayalam (native)</p></div></div></section>
   <section class="contact" id="contact"><h2>Let’s talk</h2>
-    <p class="muted">I’m open to cloud, DevOps, project delivery and business analysis roles, and I’m open to relocating. Email is the quickest way to reach me.</p>
+    <p class="muted">I’m open to cloud, DevOps, project and business analysis roles, and I’m open to relocating. Email is the quickest way to reach me.</p>
     <div class="cta" style="margin-top:24px"><a class="btn primary" href="mailto:aiswarya.ravikumar22@gmail.com">aiswarya.ravikumar22@gmail.com</a>
       <a class="btn" href="https://www.linkedin.com/in/aiswarya-ravikumar22" target="_blank" rel="noopener">linkedin.com/in/aiswarya-ravikumar22</a></div></section>
   <footer>© 2026 Aiswarya Ravikumar. Kochi, India.</footer>
@@ -161,26 +162,21 @@ const L={
 dev:{role:"Cloud and DevOps engineer building reliable Azure infrastructure with Terraform and CI/CD, based in Kochi, India.",kick:["Terraform","Azure DevOps","Site reliability","Landing zones"],
  about:["I design, automate and run enterprise Azure environments. My work centres on Infrastructure as Code with Terraform, CI/CD pipelines in Azure DevOps, and keeping production services observable and available.","I like turning manual processes into dependable automation, and explaining the result clearly to engineers and leadership."],
  order:[0,3,1,2],hot:["iac","azure","devops","mon"]},
-pm:{role:"Technical delivery professional who takes cloud and automation projects from design to production and keeps every stakeholder informed.",kick:["Delivery planning","Stakeholder reporting","Agile","Change management"],
- about:["I have delivered a multi-environment Azure landing zone end-to-end, supported 35+ applications across three service tiers, and coordinated work across infrastructure, operations and application teams.","I work well with ITSM change and incident processes, report clearly to leadership, and am completing an MBA in Artificial Intelligence to pair delivery with business strategy."],
- order:[0,1,3,2],hot:["del","devops","mon"]},
-ba:{role:"Analyst-minded engineer who turns business needs into requirements, dashboards and automation that leadership can use.",kick:["Requirements","Process improvement","KPIs and dashboards","Stakeholder communication"],
- about:["I start from the problem. The Resiliency Scorecard began as a need to see risk across 300+ applications, and became a scoring platform with metrics leadership could act on. The invoice hub began as a manual process and became an AI-assisted solution.","I present clearly to technical and non-technical audiences, and my MBA in Artificial Intelligence is deepening how I connect data to decisions."],
- order:[1,2,3,0],hot:["del","data"]}};
+mgmt:{role:"Delivery and business analysis professional who turns business needs into requirements, delivers cloud and automation projects end-to-end, and keeps stakeholders informed.",kick:["Delivery planning","Requirements","Stakeholder reporting","Process improvement"],
+ about:["I have delivered a multi-environment Azure landing zone end-to-end, supported 35+ applications across three service tiers, and worked with infrastructure, operations and application teams. I start from the business problem: the Resiliency Scorecard began as a need to see risk across 300+ applications and became a platform leadership could act on.","I work well with ITSM change and incident processes, report clearly to technical and non-technical audiences, and am completing an MBA in Artificial Intelligence to connect delivery with business strategy."],
+ order:[1,0,2,3],hot:["del","data"]}};
 const J=[
 {h:"Cloud Engineer, Lockton (via H&amp;R Block)",m:"Trivandrum, India · Aug 2025 – Present",b:{
  dev:["Designed the IaC architecture and deployment standards for the Malaysia Azure landing zone and delivered it end-to-end across dev, test and production.","Defined the Terraform module structure and workspace strategy, and built reusable modules managed through GitHub.","Automated escalation of unacknowledged SCOM alerts to PagerDuty with a custom polling script.","Handled incidents, changes and requests in ServiceNow and Azure DevOps; administered Azure Databricks and Unity Catalog."],
- pm:["Delivered the Malaysia Azure landing zone end-to-end across dev, test and production, following the standards and module structure I defined.","Selected for the Lockton client engagement for performance, technical expertise and reliability, working across VMware, Wintel and Cloud teams.","Managed incidents, changes and service requests in ServiceNow and Azure DevOps with minimal service disruption.","Automated monthly compliance reporting with PowerShell and won 1st place at the Lockton AI Hackathon 2026."],
- ba:["Turned leadership reporting needs into a Power BI dashboard that consolidates operations data for VMware, Wintel and Cloud teams.","Automated monthly operational and compliance reporting with PowerShell, replacing manual effort.","Closed an incident-response gap by automating SCOM-to-PagerDuty escalation of unacknowledged alerts.","Won 1st place at the Lockton AI Hackathon 2026 with an AI-powered invoice solution built on Copilot, Dataverse and Power BI."]}},
+ mgmt:["Delivered the Malaysia Azure landing zone end-to-end across dev, test and production, following the standards and module structure I defined.","Turned leadership reporting needs into a Power BI dashboard consolidating operations data for VMware, Wintel and Cloud teams, and automated monthly compliance reporting with PowerShell.","Managed incidents, changes and service requests in ServiceNow and Azure DevOps with minimal service disruption, and automated SCOM-to-PagerDuty escalation to close an incident-response gap.","Selected for the Lockton client engagement for performance, technical expertise and reliability; won 1st place at the Lockton AI Hackathon 2026."]}},
 {h:"Associate Software Engineer, H&amp;R Block",m:"Trivandrum, India · Jul 2023 – Aug 2025",b:{
  dev:["Implemented DevOps automation for four applications using Terraform Enterprise modules and Azure DevOps pipelines.","Moved applications from workspace-based workflows to CI/CD pipelines and migrated Azure IaC modules from RM3 to RM4.","Configured Datadog monitoring and alerting to improve observability and incident response.","Supported 35+ Tier-1 to Tier-3 applications as a Site Reliability Engineer."],
- pm:["Supported 35+ Tier-1 to Tier-3 applications, coordinating with application owners and operations teams to keep services available.","Contributed to an infrastructure modernisation initiative: an RM3 to RM4 module migration and a move to CI/CD pipelines.","Standardised releases for four applications with Azure DevOps pipelines.","Received the Customer-Centric and Better Together awards for support and cross-team collaboration."],
- ba:["Designed the Resiliency Scorecard to track resilience metrics across 300+ applications and give leadership visibility into risk.","Presented its architecture, impact and implementation to leadership and technical teams, winning Best Presentation.","Worked with owners of 35+ applications to understand and resolve service issues.","Received the Customer-Centric and Better Together awards for support and cross-team collaboration."]}}];
+ mgmt:["Designed the Resiliency Scorecard to track resilience metrics across 300+ applications and give leadership visibility into risk; presented it to leadership and won Best Presentation.","Supported 35+ Tier-1 to Tier-3 applications, coordinating with application owners and operations teams to keep services available.","Contributed to an infrastructure modernisation initiative and standardised releases for four applications with Azure DevOps pipelines.","Received the Customer-Centric and Better Together awards for support and cross-team collaboration."]}}];
 const P=[
-{t:"Malaysia Azure landing zone",w:"",tags:["Terraform","Azure","GitHub"],d:{dev:"A multi-environment Azure foundation provisioned with Terraform, with the module structure, workspace strategy and deployment standards the team followed for the build-out.",pm:"Delivered across dev, test and production with defined standards, giving the wider team a repeatable way to build.",ba:"Translated infrastructure needs into a standard design and deployment approach that teams could reuse."}},
-{t:"Resiliency Scorecard platform",w:"Hackathon winner and Best Presentation Award",tags:["PowerShell","MVC","JavaScript"],d:{dev:"Analyses cloud resources across 300+ enterprise applications and scores their resiliency.",pm:"Gave leadership one view of resiliency across 300+ applications so fixes could be prioritised.",ba:"Defined and automated resilience metrics for 300+ applications, then presented the results to leadership."}},
-{t:"Centralized Invoice Hub Accelerator",w:"Gold Medal, Lockton AI Hackathon 2026",tags:["Copilot","Dataverse","Power BI"],d:{dev:"An AI-powered invoice automation solution built on Microsoft Copilot and Dataverse.",pm:"Designed and pitched an AI-assisted invoice solution that won first place against other teams.",ba:"Redesigned a manual invoice process into an AI-assisted workflow with a Power BI view of the pipeline."}},
-{t:"SCOM to PagerDuty escalation",w:"",tags:["PowerShell","PagerDuty","SCOM"],d:{dev:"A polling script that escalates unacknowledged alerts after resolving authentication and scheduling issues.",pm:"Closed a gap in incident response so critical alerts are never left unattended.",ba:"Mapped the escalation gap and automated it, improving incident response."}}];
+{t:"Malaysia Azure landing zone",w:"",tags:["Terraform","Azure","GitHub"],d:{dev:"A multi-environment Azure foundation provisioned with Terraform, with the module structure, workspace strategy and deployment standards the team followed for the build-out.",mgmt:"Delivered across dev, test and production with defined standards, giving the wider team a repeatable way to build."}},
+{t:"Resiliency Scorecard platform",w:"Hackathon winner and Best Presentation Award",tags:["PowerShell","MVC","JavaScript"],d:{dev:"Analyses cloud resources across 300+ enterprise applications and scores their resiliency.",mgmt:"Defined and automated resilience metrics for 300+ applications and presented the results, giving leadership one view of risk."}},
+{t:"Centralized Invoice Hub Accelerator",w:"Gold Medal, Lockton AI Hackathon 2026",tags:["Copilot","Dataverse","Power BI"],d:{dev:"An AI-powered invoice automation solution built on Microsoft Copilot and Dataverse.",mgmt:"Redesigned a manual invoice process into an AI-assisted workflow with a Power BI view, and pitched it to win first place."}},
+{t:"SCOM to PagerDuty escalation",w:"",tags:["PowerShell","PagerDuty","SCOM"],d:{dev:"A polling script that escalates unacknowledged alerts after resolving authentication and scheduling issues.",mgmt:"Mapped an incident-response gap and automated escalation so critical alerts are never left unattended."}}];
 const S=[["iac","Infrastructure as Code","Terraform (Enterprise and Cloud), reusable modules, workspace strategy, Git, GitHub"],
 ["azure","Azure","Virtual Machines, Virtual Networks, Application Gateway, Storage, NSG, App Services, ASE, Key Vault, Managed Identity, Databricks"],
 ["devops","DevOps and automation","Azure DevOps, CI/CD pipelines, release automation, PowerShell, ServiceNow"],
@@ -201,9 +197,12 @@ function show(k){
  ["role","kick","about-t","jobs","projs","skl"].forEach(id=>{const e=$(id);e.classList.remove("swap");void e.offsetWidth;e.classList.add("swap")});
 }
 document.querySelectorAll(".lens button").forEach(b=>b.addEventListener("click",()=>show(b.dataset.k)));
-const fromHash=()=>{const h=(location.hash||"").slice(1);return L[h]?h:null};
-window.addEventListener("hashchange",()=>{const h=fromHash();if(h)show(h)});
-show(fromHash()||"dev");
+const A={dev:"dev",mgmt:"mgmt",pm:"mgmt",ba:"mgmt"};
+const fromHash=()=>A[(location.hash||"").slice(1)]||null;
+const focus=f=>{document.querySelector(".lens-label").style.display=f?"none":"";document.querySelector(".lens").style.display=f?"none":"";$("more").style.display=f?"inline-block":"none"};
+$("more").addEventListener("click",()=>focus(false));
+window.addEventListener("hashchange",()=>{const h=fromHash();if(h){show(h);focus(true)}});
+show(fromHash()||"dev");focus(!!fromHash());
 </script>
 </body>
 </html>
